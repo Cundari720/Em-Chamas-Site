@@ -36,4 +36,4 @@ Para rodar a análise estática do código:
 `./vendor/bin/phpstan analyse src --level=1`
 
 ## 👤 Autor
-Desenvolvido por **[Seu Nome Completo]**
+Desenvolvido por **Matheus Lopes Cundari**
