@@ -14,12 +14,15 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.2'
+        extensions: zip # Garante que o descompactador esteja ativo para o Composer
 
     - name: Instalar Dependências
       run: composer install --no-progress --prefer-dist
 
     - name: Linting (Análise Estática com PHPStan)
-      run: ./vendor/bin/phpstan analyse src --level=1
+      # Adicionado 'php' antes do caminho para evitar erro de permissão (126)
+      run: php vendor/bin/phpstan analyse src --level=1
 
     - name: Testes Automatizados (PHPUnit)
-      run: ./vendor/bin/phpunit tests
+      # Adicionado 'php' antes do caminho para evitar erro de permissão (126)
+      run: php vendor/bin/phpunit tests
