@@ -1,6 +1,9 @@
 <?php
 
     include 'conexao.php';
+
+    /** @var PDO $conexao */
+
     $sql = "INSERT INTO PEDIDOS (NOME, PEDIDO) VALUES (:nome, :pedido)";
 
     $nome = $_POST['nome'];
