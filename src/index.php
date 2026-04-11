@@ -2,6 +2,10 @@
 
 include 'conexao.php';
 
+ /**
+  * @var PDO $conexao
+  */
+ 
 $sql = "USE EC;";
 $consulta = $conexao->query($sql);
 ?>
