@@ -1,14 +1,18 @@
 body {
     font-family: 'Times New Roman', serif;
-    background-image: url('https://instagram.fbsb8-2.fna.fbcdn.net/v/t51.82787-15/649805970_17967499293034537_2100697540781813225_n.jpg?stp=dst-jpg_e35_tt6&_nc_cat=102&ig_cache_key=MzQ5MTkwMTU1MDAxNDQ2MTM2NQ%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjExNjl4MTE2OS5zZHIuQzMifQ%3D%3D&_nc_ohc=Xf9ZcwvDMm8Q7kNvwHKb6Hr&_nc_oc=AdrPT4_e-y5Sa3-wJJ-lmkRq3oiwTdhwLNd3AQYNAdZz48kAnWo0ex8cz8qtGKWjjNdq9tQknwVb-NPfEmFxtZy1&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=instagram.fbsb8-2.fna&_nc_gid=NQAZKm_QuroejCO5LMtN1A&_nc_ss=7a32e&oh=00_Afz0Pc-XE9tYI3r3bgk7_5KHo90fMUrW0NUEVcTJpaY2NQ&oe=69C867CD');
-    margin: 0;
+    background-size: cover;
     padding: 20px;
+    background-image: url('final.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Isso mantém o fundo parado enquanto o texto rola */
 }
+
 
 h1 {
     font-family: 'times new roman', serif;
     text-align: center;
-    color: #FF6200;
+    color: #C85000; 
     font-size: 80px;    
 }
 
