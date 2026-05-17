@@ -9,9 +9,6 @@
     "autoload": {
         "psr-4": {
             "App\\": "src/"
-        },
-        "classmap": [
-            "BibleService.php"
-        ]
+        }
     }
 }
