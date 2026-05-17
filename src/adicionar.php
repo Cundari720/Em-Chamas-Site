@@ -16,7 +16,7 @@
 
     
 
-    header('Location:index.php');
+    header('Location:pedidos.php');
 
 
 ?>
