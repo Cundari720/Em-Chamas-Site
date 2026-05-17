@@ -1,5 +1,17 @@
+<?php
+
+include 'conexao.php';
+
+ /**
+  * @var PDO $conexao
+  */
+ 
+$sql = "USE EC;";
+$consulta = $conexao->query($sql);
+?>
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -9,46 +21,17 @@
 </head>
 
 <body>
+    <h1>Em Chamas</h1>
+    <h2>Fazer Pedido</h2>
+    <form action="adicionar.php" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" required><br><br>
 
-    <div class="container">
+        <label>Pedido:</label>
+        <input type="text" name="pedido" required><br><br>
 
-        <header>
-            <div class="logo">
-                EM CHAMAS
-            </div>
-
-            <nav>
-                <ul>
-                    <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="informacoes.php">INFOMAÇÕES</a></li>
-                    <li><a href="versiculo.php">VERSÍCULO DO DIA</a></li>
-                    <li><a href="pedidos.php">PEDIDOS</a></li>
-                </ul>
-            </nav>
-        </header>
-
-
-        <section class="hero">
-
-            <div class="left-content">
-
-                <h2>'Proclamamos o que vimos e ouvimos para que
-                    vocês também tenham comunhão conosco.
-                    Nossa comunhão é com o Pai e com seu
-                    Filho Jesus Cristo.'
-                    <br><br> 1 João 1:3 <br><br>
-                </h2>
-                <a href="informacoes.php" class="btn">SAIBA MAIS</a>
-            </div>
-
-        </section>
-
-        <footer>
-            Jesus is King © 2026 • All rights reserved.
-        </footer>
-
-    </div>
-
+        <button type="submit">Enviar para o Banco</button>
+    </form>
 </body>
 
 </html>
