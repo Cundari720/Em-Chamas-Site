@@ -66,9 +66,9 @@ class BibleApiTest extends TestCase
 
         // Valida que a referência bate com o que foi pedido
         $this->assertStringContainsString(
-            'John',
+            'João',
             $dados['reference'],
-            'A referência deve conter John'
+            'A referência deve conter João'
         );
     }
 }
