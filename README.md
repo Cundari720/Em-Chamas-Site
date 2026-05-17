@@ -21,7 +21,7 @@ O **Em Chamas** é uma aplicação web simples (GUI) desenvolvida em PHP e MySQL
 1. Clone este repositório:
    `git clone https://github.com/SEU_USUARIO/em-chamas.git`
 2. Mova a pasta para o diretório público do seu servidor local (ex: `htdocs` no XAMPP).
-3. Importe a estrutura do banco de dados (Crie o banco `EC` e a tabela `PEDIDOS`).
+3. Importe a estrutura do banco de dados Em Chamas file.sql
 4. Altere as credenciais de banco de dados no arquivo `src/conexao.php`, se necessário.
 5. Acesse `http://localhost/em-chamas/src/index.php` no seu navegador.
 
