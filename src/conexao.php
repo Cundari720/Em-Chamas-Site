@@ -1,18 +1,24 @@
 <?php
+function getConexao() {
 
-    $host = "127.0.0.1";
-    $user = "root";
-    $porta = "3306";
-    $password = "2308";
-    $db = "EC";
+    $host     = getenv('MYSQLHOST')     ?: 'localhost';
+    $user     = getenv('MYSQLUSER')     ?: 'root';
+    $port     = getenv('MYSQLPORT')     ?: '3306';
+    $password = getenv('MYSQLPASSWORD') ?: '2308';
+    $db       = getenv('MYSQLDATABASE') ?: 'EC';
 
 
-    $conexao = new PDO(
-        'mysql:host='.$host.';
-        port='.$porta.';
-        dbname='.$db,
-        $user,
-        $password);
+    $conexao = new mysqli($host, $user, $password, $db, $port);
 
+    if ($conexao->connect_error) {
+        die('Erro na conexão: ' . $conexao->connect_error);
+    }
+
+    return $conexao;
+}
+
+
+// Create a global connection variable so includes provide `$conexao` directly
+$conexao = getConexao();
 
 ?>

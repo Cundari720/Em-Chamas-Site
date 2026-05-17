@@ -1,22 +1,27 @@
 <?php
 
-    include 'conexao.php';
+include 'conexao.php';
 
-    /** @var PDO $conexao */
+/** @var mysqli $conexao */
 
-    $sql = "INSERT INTO PEDIDOS (NOME, PEDIDO) VALUES (:nome, :pedido)";
+$nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+$pedido = isset($_POST['pedido']) ? $_POST['pedido'] : '';
 
-    $nome = $_POST['nome'];
-    $pedido = $_POST['pedido'];
-
-    $stmt = $conexao->prepare($sql);
-    $stmt->bindParam(':nome', $nome);
-    $stmt->bindParam(':pedido', $pedido);
-    $stmt->execute();
-
-    
-
+if ($nome === '' || $pedido === '') {
     header('Location:pedidos.php');
+    exit;
+}
+
+$stmt = $conexao->prepare("INSERT INTO PEDIDOS (NOME, PEDIDO) VALUES (?, ?)");
+if (! $stmt) {
+    die('Prepare failed: ' . $conexao->error);
+}
+
+$stmt->bind_param('ss', $nome, $pedido);
+$stmt->execute();
+$stmt->close();
+
+header('Location:pedidos.php');
 
 
 ?>
