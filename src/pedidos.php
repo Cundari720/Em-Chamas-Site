@@ -3,11 +3,9 @@
 include 'conexao.php';
 
  /**
-  * @var PDO $conexao
+  * @var mysqli $conexao
   */
  
-$sql = "USE EC;";
-$consulta = $conexao->query($sql);
 ?>
 
 <!DOCTYPE html>
