@@ -12,7 +12,7 @@ if ($nome === '' || $pedido === '') {
     exit;
 }
 
-$stmt = $conexao->prepare("INSERT INTO PEDIDOS (NOME, PEDIDO) VALUES (?, ?)");
+$stmt = $conexao->prepare("INSERT INTO pedidos (nome, pedido) VALUES (?, ?)");
 if (! $stmt) {
     die('Prepare failed: ' . $conexao->error);
 }
