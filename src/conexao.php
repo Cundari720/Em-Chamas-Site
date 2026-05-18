@@ -1,10 +1,10 @@
 <?php
 function getConexao() {
-    $host     = 'mysql.railway.internal';
-    $user     = 'root';
-    $port     = 3306;
-    $password = 'sIMgGKouMHiHuisTYHqQWOsrSXGNDYmL';
-    $db       = 'railway';
+    $host     = getenv('MYSQLHOST')     ?: 'localhost';
+    $user     = getenv('MYSQLUSER')     ?: 'root';
+    $port     = (int)(getenv('MYSQLPORT') ?: 3306);
+    $password = getenv('MYSQLPASSWORD') ?: '';
+    $db       = getenv('MYSQLDATABASE') ?: 'railway';
 
     $conexao = new mysqli($host, $user, $password, $db, $port);
 
