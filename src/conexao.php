@@ -1,10 +1,10 @@
 <?php
 function getConexao() {
-    $host     = getenv('MYSQLHOST')     ?: 'localhost';
-    $user     = getenv('MYSQLUSER')     ?: 'root';
-    $port     = (int)(getenv('MYSQLPORT') ?: 3306);
-    $password = getenv('MYSQLPASSWORD') ?: '';
-    $db       = getenv('MYSQLDATABASE') ?: 'railway';
+    $host     = $_SERVER['MYSQLHOST']     ?? $_ENV['MYSQLHOST']     ?? getenv('MYSQLHOST');
+    $user     = $_SERVER['MYSQLUSER']     ?? $_ENV['MYSQLUSER']     ?? getenv('MYSQLUSER');
+    $port     = (int)($_SERVER['MYSQLPORT'] ?? $_ENV['MYSQLPORT']   ?? getenv('MYSQLPORT') ?? 3306);
+    $password = $_SERVER['MYSQLPASSWORD'] ?? $_ENV['MYSQLPASSWORD'] ?? getenv('MYSQLPASSWORD');
+    $db       = $_SERVER['MYSQLDATABASE'] ?? $_ENV['MYSQLDATABASE'] ?? getenv('MYSQLDATABASE');
 
     $conexao = new mysqli($host, $user, $password, $db, $port);
 
