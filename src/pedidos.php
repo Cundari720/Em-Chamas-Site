@@ -15,10 +15,11 @@ include 'conexao.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Em Chamas Pedidos</title>
-    <link rel="stylesheet" href="stylepedidos.css">
+    <link rel="icon" href="icon.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body class="page-pedidos">
 
     <div class="container">
 
@@ -38,37 +39,38 @@ include 'conexao.php';
         </header>
 
 
-        <section class="hero">
-            <div class="hero-content">
-                <h1>PEDIDOS</h1>
+        <main class="main-content">
+            <section class="hero hero--split">
+                <div class="content-block content-block--main">
+                    <h1>PEDIDOS</h1><br> 
 
-                <p class="chamada">
-                    Coloque seu nome e seu pedido<br>
-                    para que possamos orar por você!
-                </p>
+                    <p class="chamada">
+                        Coloque seu nome e seu pedido<br>
+                        para que possamos orar por você!
+                    </p>
 
-                <form action="adicionar.php" method="POST" class="order-form">
-                    <div class="input-group">
-                        <label>Nome:</label>
-                        <input type="text" name="nome" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Pedido:</label>
-                        <input type="text" name="pedido" required>
-                    </div>
-                    <button type="submit" class="btn-submit">Enviar</button>
-                </form>
+                    <form action="adicionar.php" method="POST" class="order-form">
+                        <div class="input-group">
+                            <label>Nome:</label>
+                            <input type="text" name="nome" required>
+                        </div>
+                        <div class="input-group">
+                            <label>Pedido:</label>
+                            <input type="text" name="pedido" required>
+                        </div>
+                        <button type="submit" class="btn-submit">Enviar</button>
+                    </form>
+                </div>
 
-            </div>
-
-            <div class="hero-quote">
-                <h2>
-                    Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas,
-                    e com ação de graças, apresentem seus pedidos a Deus.
-                    <span>Filipenses 4:6</span>
-                </h2>
-            </div>
-        </section>
+                <div class="content-block content-block--quote">
+                    <h2>
+                        Não andem ansiosos por coisa alguma, mas em tudo, pela oração e súplicas,
+                        e com ação de graças, apresentem seus pedidos a Deus.
+                        <span>Filipenses 4:6</span>
+                    </h2>
+                </div>
+            </section>
+        </main>
 
         <footer>
             Jesus is King © 2026 • All rights reserved.
