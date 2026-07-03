@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../src/versiculo.php';
+
 use PHPUnit\Framework\TestCase;
 
 class BibleApiTest extends TestCase
@@ -70,5 +72,17 @@ class BibleApiTest extends TestCase
             $dados['reference'],
             'A referência deve conter João'
         );
+    }
+
+    /** @test */
+    public function testGetVersiculoRetornaFallbackQuandoApiFalha()
+    {
+        $versiculo = getVersiculo('john 3:16', static function () {
+            return false;
+        });
+
+        $this->assertArrayHasKey('text', $versiculo, 'Deve retornar um array com o campo text');
+        $this->assertNotEmpty($versiculo['text'], 'O texto de fallback não deve ficar vazio');
+        $this->assertStringContainsString('João 3:16', $versiculo['reference'], 'A referência de fallback deve ser válida');
     }
 }
