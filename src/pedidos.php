@@ -31,7 +31,7 @@ include 'conexao.php';
             <nav>
                 <ul>
                     <li><a href="index.php">INÍCIO</a></li>
-                    <li><a href="informacoes.php">INFOMAÇÕES</a></li>
+                    <li><a href="informacoes.php">INFORMAÇÕES</a></li>
                     <li><a href="versiculo.php">VERSÍCULO DO DIA</a></li>
                     <li><a href="pedidos.php">PEDIDOS</a></li>
                 </ul>
